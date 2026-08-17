@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Build original grade 8 and Algebra I review sets around eMATHinstruction unit themes.">
+  <title>Math Review Builder</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=5">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Math Review Builder home">
+        <span class="brand-mark" aria-hidden="true">∑</span>
+        <span>Math Review Builder</span>
+      </a>
+      <div class="header-note"><span class="status-dot"></span> Original practice sets · ready to print</div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+          <p class="kicker">Teacher toolkit / 01</p>
+          <h1 id="page-title">Make review time<br><em>click</em> faster.</h1>
+          <p class="hero-text">Build a fresh set of standards-aligned questions in seconds. Choose a course, set the length, and let the practice begin.</p>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="orbit orbit-one"></div>
+          <div class="orbit orbit-two"></div>
+          <div class="math-scribble scribble-one">f(x) = 2x + 5</div>
+          <div class="math-scribble scribble-two">x² + y²</div>
+          <div class="math-scribble scribble-three">∴ solve</div>
+          <div class="hero-sticker">READY<br>WHEN<br>YOU ARE</div>
+        </div>
+      </section>
+
+      <section class="builder-layout" aria-label="Review set builder">
+        <form id="generator-form" class="builder-card">
+          <div class="card-heading">
+            <div>
+              <p class="kicker">Set up your review</p>
+              <h2>What do students need today?</h2>
+            </div>
+            <span class="step-count">01—04</span>
+          </div>
+
+          <div class="form-section">
+            <label class="section-label" for="grade-level">01 / Course</label>
+            <select id="grade-level" name="grade" class="select-large">
+              <option value="8">Grade 8</option>
+              <option value="algebra1" selected>Algebra I</option>
+            </select>
+          </div>
+
+          <div class="form-section">
+            <label class="section-label" for="focus-topic">02 / Focus</label>
+            <select id="focus-topic" name="topic" class="select-large"></select>
+            <p class="field-hint">Choose a unit or let the builder mix the course.</p>
+          </div>
+
+          <div class="form-section split-fields">
+            <div>
+              <label class="section-label" for="question-count">03 / Questions</label>
+              <div class="count-input-wrap">
+                <input id="question-count" name="count" type="number" min="1" max="20" step="1" value="8">
+                <span>items</span>
+              </div>
+            </div>
+            <div>
+              <label class="section-label" for="question-type">04 / Format</label>
+              <select id="question-type" name="type" class="select-large">
+                <option value="multiple-choice">Multiple choice</option>
+                <option value="constructed-response">Constructed response</option>
+                <option value="mixed" selected>Mixed set</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="generate-button">
+            <span>Generate review set</span>
+            <span class="button-arrow" aria-hidden="true">↗</span>
+          </button>
+
+          <div class="source-note">
+            <span class="source-icon" aria-hidden="true">✦</span>
+            <p>Original questions organized around public <a href="https://www.emathinstruction.com/free-video-lessons/" target="_blank" rel="noreferrer">eMATHinstruction unit themes</a>. This tool is independent and not an official eMATHinstruction product.</p>
+          </div>
+        </form>
+
+        <section class="results-card" aria-live="polite">
+          <div class="results-topline">
+            <div>
+              <p class="kicker">Your review set</p>
+              <h2 id="worksheet-title">Algebra I · mixed review</h2>
+            </div>
+            <div class="results-actions">
+              <button id="toggle-answers" class="text-button" type="button" aria-pressed="false">Show answers</button>
+              <button id="print-page" class="icon-button" type="button" aria-label="Print review set" title="Print review set">⎙</button>
+            </div>
+          </div>
+
+          <div class="results-meta">
+            <span id="problem-summary">8 questions</span>
+            <span class="meta-divider">/</span>
+            <span id="source-summary">Mixed topics</span>
+            <span class="meta-divider">/</span>
+            <span id="type-summary">Mixed format</span>
+          </div>
+
+          <div id="problems" class="problem-list"></div>
+
+          <div class="answer-key-panel" id="answer-key-panel" hidden>
+            <div class="answer-key-heading">
+              <div>
+                <p class="kicker">Teacher key</p>
+                <h2>Answers & quick checks</h2>
+              </div>
+              <button id="hide-answers" class="text-button" type="button">Hide key</button>
+            </div>
+            <ol id="answer-key" class="answer-key"></ol>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Math Review Builder</span>
+      <span>Built for the next 20 minutes of math.</span>
+    </footer>
+  </div>
+
+  <script src="app.js?v=5"></script>
+</body>
+</html>
